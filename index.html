@@ -53,7 +53,6 @@
             line-height: 1.6;
         }
 
-        /* Typing text */
         #typingText {
             min-height: 60px;
             font-size: 1.2em;
@@ -105,8 +104,7 @@
 <body>
 
 <!-- 🎵 Background Music -->
-<audio id="bgMusic" loop>
-    <!-- Replace this URL with any soft romantic mp3 you like -->
+<audio id="bgMusic" preload="auto" loop>
     <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_1bfa4f7c56.mp3" type="audio/mpeg">
 </audio>
 
@@ -123,16 +121,18 @@
     setInterval(createHeart, 400);
 
     /* Typing animation */
-    const text = "This little page carries big feelings… all for you 💕";
-    let index = 0;
-    function typeText() {
-        if (index < text.length) {
-            document.getElementById("typingText").innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeText, 60);
+    const typingMessage = "This little page carries big feelings… all for you 💕";
+    let tIndex = 0;
+
+    function startTyping() {
+        if (tIndex < typingMessage.length) {
+            document.getElementById("typingText").innerHTML += typingMessage.charAt(tIndex);
+            tIndex++;
+            setTimeout(startTyping, 60);
         }
     }
-    window.onload = typeText;
+
+    window.onload = startTyping;
 </script>
 
 <div class="card">
@@ -214,8 +214,12 @@
 
 <script>
     function openPopup() {
+        const music = document.getElementById("bgMusic");
+        music.volume = 0.4;
+        music.currentTime = 0;
+        music.play();
+
         document.getElementById("popup").style.display = "flex";
-        document.getElementById("bgMusic").play();
     }
 
     function closePopup() {
