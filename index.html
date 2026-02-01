@@ -1,203 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Sweetie ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sweetie ❤️</title>
 
-<style>
-* { box-sizing: border-box; }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: #fff;
-    text-align: center;
-    overflow-x: hidden;
-    background: linear-gradient(-45deg,#ff4e8c,#ff7aa2,#ffb3c6,#ff5f7e);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+            background: linear-gradient(
+                -45deg,
+                #ff4e8c,
+                #ff7aa2,
+                #ffb3c6,
+                #ff5f7e
+            );
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+        }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(0,0,0,0.6));
-    z-index: 0;
-}
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.15),
+                rgba(0, 0, 0, 0.6)
+            );
+            z-index: 0;
+        }
 
-.card {
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(14px);
-    border-radius: 25px;
-    padding: 30px;
-    max-width: 780px;
-    margin: 40px auto;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-    position: relative;
-    z-index: 2;
-}
+        .card {
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(14px);
+            border-radius: 25px;
+            padding: 30px;
+            max-width: 780px;
+            margin: 40px auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            position: relative;
+            z-index: 2;
+        }
 
-h1 { font-size: 2.4em; }
-h2 { margin-top: 25px; }
-p { font-size: 1.15em; line-height: 1.6; }
+        h1 {
+            font-size: 2.4em;
+        }
 
-/* 💑 SVG Container */
-.svg-love {
-    width: 220px;
-    margin: 20px auto;
-}
+        h2 {
+            margin-top: 25px;
+        }
 
-.surprise-btn {
-    background: linear-gradient(135deg, #ff4e8c, #ff8fab);
-    border: none;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    border-radius: 30px;
-    cursor: pointer;
-    color: #fff;
-    margin-top: 20px;
-}
+        p {
+            font-size: 1.15em;
+            line-height: 1.6;
+        }
 
-.footer {
-    margin-top: 30px;
-    font-size: 1.25em;
-    font-weight: bold;
-}
+        /* SVG */
+        .svg-love {
+            width: 220px;
+            margin: 20px auto;
+        }
 
-/* Hearts */
-.heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 22px;
-    animation: floatHeart 6s linear infinite;
-    opacity: 0.75;
-    z-index: 1;
-}
+        .surprise-btn {
+            background: linear-gradient(135deg, #ff4e8c, #ff8fab);
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            cursor: pointer;
+            color: #fff;
+            margin-top: 20px;
+        }
 
-@keyframes floatHeart {
-    from { transform: translateY(0); }
-    to { transform: translateY(-110vh); opacity: 0; }
-}
+        .footer {
+            margin-top: 30px;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
 
-@media (max-width: 768px) {
-    h1 { font-size: 2em; }
-    .svg-love { width: 180px; }
-}
-</style>
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 22px;
+            animation: floatHeart 6s linear infinite;
+            opacity: 0.75;
+            z-index: 1;
+        }
+
+        @keyframes floatHeart {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .svg-love {
+                width: 180px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<script>
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "💗";
-    heart.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 7000);
-}
-setInterval(createHeart, 400);
-</script>
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "💗";
+            heart.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(heart);
 
-<div class="card">
-    <h1>Happy Valentine Week, Sweetie ❤️</h1>
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
 
-    <p>This little page carries big feelings… all for you 💕</p>
+        setInterval(createHeart, 400);
+    </script>
 
-    <!-- 💑 INLINE DUDU BUBU STYLE SVG (CANNOT FAIL) -->
-    <div class="svg-love">
-        <svg viewBox="0 0 200 200">
-            <!-- Heads -->
-            <circle cx="75" cy="80" r="35" fill="#fff"/>
-            <circle cx="125" cy="80" r="35" fill="#fff"/>
+    <div class="card">
+        <h1>Happy Valentine Week, Sweetie ❤️</h1>
 
-            <!-- Eyes -->
-            <circle cx="68" cy="78" r="4" fill="#000"/>
-            <circle cx="82" cy="78" r="4" fill="#000"/>
-            <circle cx="118" cy="78" r="4" fill="#000"/>
-            <circle cx="132" cy="78" r="4" fill="#000"/>
-
-            <!-- Blush -->
-            <circle cx="60" cy="88" r="5" fill="#ff9aa2"/>
-            <circle cx="140" cy="88" r="5" fill="#ff9aa2"/>
-
-            <!-- Bodies -->
-            <ellipse cx="100" cy="135" rx="70" ry="45" fill="#fff"/>
-
-            <!-- Heart -->
-            <path d="M100 120 
-                     C90 105, 60 110, 60 140
-                     C60 165, 100 185, 100 185
-                     C100 185, 140 165, 140 140
-                     C140 110, 110 105, 100 120Z"
-                  fill="#ff4e8c"/>
-        </svg>
-    </div>
-
-    <button class="surprise-btn" onclick="openPopup()">💝 Click Me, Sweetie 💝</button>
-
-    <h2>🌹 Rose Day</h2>
-    <p>
-        If I could give you one thing every day,  
-        it would be the feeling of being loved,  
-        safe, and chosen 🌹
-    </p>
-
-    <h2>🍫 Chocolate Day</h2>
-    <p>
-        You make my normal days sweeter  
-        without even trying,  
-        chocolates are just an excuse 🍫
-    </p>
-
-    <h2>🧸 Teddy Day</h2>
-    <p>
-        Whenever you feel low,  
-        imagine me pulling you closer  
-        and holding you tight 🧸
-    </p>
-
-    <h2>❤️ Valentine’s Day</h2>
-    <p>
-        I don’t want perfect moments,  
-        I want real ones —  
-        with you, always ❤️
-    </p>
-
-    <div class="footer">
-        I love you endlessly 💖  
-        <br>— Your Farzi Engineer 😌
-    </div>
-</div>
-
-<div id="popup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:10; justify-content:center; align-items:center;">
-    <div style="background:#ff8fab; padding:30px; border-radius:25px; max-width:400px;">
-        <h2>Hey Sweetie 💕</h2>
         <p>
-            No matter what happens,  
-            my heart will always choose you.
+            This little page carries big feelings… all for you 💕
         </p>
-        <div style="margin-top:15px; font-weight:bold; cursor:pointer;" onclick="closePopup()">Close 💗</div>
-    </div>
-</div>
 
-<script>
-function openPopup() {
-    document.getElementById("popup").style.display = "flex";
-}
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-}
-</script>
+        <div class="svg-love">
+            <svg viewBox="0 0 200 200">
+                <!-- Heads -->
+                <circle cx="75" cy="80" r="35" fill="#fff" />
+                <circle cx="125" cy="80" r="35" fill="#fff" />
+
+                <!-- Eyes -->
+                <circle cx="68" cy="78" r="4" fill="#000" />
+                <circle cx="82" cy="78" r="4" fill="#000" />
+                <circle cx="118" cy="78" r="4" fill="#000" />
+                <circle cx="132" cy="78" r="4" fill="#000" />
+
+                <!-- Blush -->
+                <circle cx="60" cy="88" r="5" fill="#ff9aa2" />
+                <circle cx="140" cy="88" r="5" fill="#ff9aa2" />
+
+                <!-- Body -->
+                <ellipse cx="100" cy="135" rx="70" ry="45" fill="#fff" />
+
+                <!-- Heart -->
+                <path
+                    d="M100 120
+                       C90 105, 60 110, 60 140
+                       C60 165, 100 185, 100 185
+                       C100 185, 140 165, 140 140
+                       C140 110, 110 105, 100 120Z"
+                    fill="#ff4e8c"
+                />
+            </svg>
+        </div>
+
+        <button class="surprise-btn" onclick="openPopup()">
+            💝 Click Me, Sweetie 💝
+        </button>
+
+        <h2>🌹 Rose Day</h2>
+        <p>
+            If I could, I'd give you a rose every day — not because
+            they're beautiful, but because they remind me of your
+            soft heart ❤️
+            <br><br>
+            HAPPY ROSE DAY BETUUUU 🌹🌹
+        </p>
+
+        <h2>🍫 Chocolate Day</h2>
+        <p>
+            Life with you feels like my favorite chocolate —
+            sweet, comforting, and always addictive 🫠🍫
+        </p>
+
+        <h2>🧸 Teddy Day</h2>
+        <p>
+            Whenever you feel low, remember there’s someone
+            who wants to hold you tight and never let go 🧸❤️
+        </p>
+
+        <h2>❤️ Valentine’s Day</h2>
+        <p>
+            I don't promise perfection, but I promise effort,
+            loyalty, and a heart that chooses you — every single day
+        </p>
+
+        <div class="footer">
+            I love you endlessly 💖
+            <br>
+            — Your Farzi Engineer 😌
+        </div>
+    </div>
+
+    <div
+        id="popup"
+        style="
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+        "
+    >
+        <div
+            style="
+                background: #ff8fab;
+                padding: 30px;
+                border-radius: 25px;
+                max-width: 400px;
+            "
+        >
+            <h2>For u my Kuchipuchi 💕</h2>
+            <p>
+                No matter where life takes us,
+                my heart will always choose you.
+                Today, tomorrow, always. 🫶🫶
+            </p>
+            <div
+                style="margin-top: 15px; font-weight: bold; cursor: pointer;"
+                onclick="closePopup()"
+            >
+                Close 💗
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
