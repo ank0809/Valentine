@@ -53,29 +53,15 @@ body::before {
 
 h1 { font-size: 2.4em; }
 h2 { margin-top: 30px; }
+p { font-size: 1.15em; line-height: 1.6; }
 
-p {
-    font-size: 1.15em;
-    line-height: 1.6;
-}
-
-#typingText {
-    min-height: 60px;
-    font-size: 1.2em;
-}
+#typingText { min-height: 60px; font-size: 1.2em; }
 
 /* SVG */
-.svg-love {
-    width: 220px;
-    margin: 20px auto;
-}
+.svg-love { width: 220px; margin: 20px auto; }
 
 /* Heartbeat animation */
-.heartbeat {
-    animation: heartbeat 1.6s infinite;
-    transform-origin: center;
-}
-
+.heartbeat { animation: heartbeat 1.6s infinite; transform-origin: center; }
 @keyframes heartbeat {
     0%   { transform: scale(1); }
     25%  { transform: scale(1.08); }
@@ -102,17 +88,13 @@ p {
     transform: translateY(30px);
     animation: fadeUp 1s ease forwards;
 }
-
 .section.delay1 { animation-delay: 0.5s; }
 .section.delay2 { animation-delay: 1s; }
 .section.delay3 { animation-delay: 1.5s; }
 .section.delay4 { animation-delay: 2s; }
 
 @keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .footer {
@@ -130,7 +112,6 @@ p {
     opacity: 0.75;
     z-index: 1;
 }
-
 @keyframes floatHeart {
     from { transform: translateY(0); }
     to   { transform: translateY(-110vh); opacity: 0; }
@@ -144,6 +125,11 @@ p {
 </head>
 
 <body>
+
+<!-- Background music -->
+<audio id="bgMusic" loop>
+    <source src="https://raw.githubusercontent.com/ank0809/Valentine/ef63e0e79e66cacbf8d548255e1b93cc955d5a32/rhnuma_raone_srk.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 /* Floating hearts */
@@ -160,7 +146,6 @@ setInterval(createHeart, 400);
 /* Typing animation */
 const message = "This little page carries big feelings… all for you 💕";
 let i = 0;
-
 function typeText() {
     if (i < message.length) {
         document.getElementById("typingText").innerHTML += message.charAt(i);
@@ -173,24 +158,19 @@ window.onload = typeText;
 
 <div class="card">
     <h1>Happy Valentine Week, Sweetie ❤️</h1>
-
     <p id="typingText"></p>
 
     <div class="svg-love">
         <svg viewBox="0 0 200 200">
             <circle cx="75" cy="80" r="35" fill="#fff"/>
             <circle cx="125" cy="80" r="35" fill="#fff"/>
-
             <circle cx="68" cy="78" r="4"/>
             <circle cx="82" cy="78" r="4"/>
             <circle cx="118" cy="78" r="4"/>
             <circle cx="132" cy="78" r="4"/>
-
             <circle cx="60" cy="88" r="5" fill="#ff9aa2"/>
             <circle cx="140" cy="88" r="5" fill="#ff9aa2"/>
-
             <ellipse cx="100" cy="135" rx="70" ry="45" fill="#fff"/>
-
             <path class="heartbeat"
                   d="M100 120 C90 105,60 110,60 140
                      C60 165,100 185,100 185
@@ -206,57 +186,37 @@ window.onload = typeText;
 
     <div class="section delay1">
         <h2>🌹 Rose Day</h2>
-        <p>
-            If I could, I'd give you a rose every day — not because
-            they're beautiful, but because they remind me of your
-            soft heart ❤️
-        </p>
+        <p>If I could, I'd give you a rose every day — not because they're beautiful, but because they remind me of your soft heart ❤️</p>
     </div>
 
     <div class="section delay2">
         <h2>🍫 Chocolate Day</h2>
-        <p>
-            Life with you feels like my favorite chocolate —
-            sweet, comforting, and always addictive 🫠🍫
-        </p>
+        <p>Life with you feels like my favorite chocolate — sweet, comforting, and always addictive 🫠🍫</p>
     </div>
 
     <div class="section delay3">
         <h2>🧸 Teddy Day</h2>
-        <p>
-            Whenever you feel low, remember there’s someone
-            who wants to hold you tight and never let go 🧸❤️
-        </p>
+        <p>Whenever you feel low, remember there’s someone who wants to hold you tight and never let go 🧸❤️</p>
     </div>
 
     <div class="section delay4">
         <h2>❤️ Valentine’s Day</h2>
-        <p>
-            I don't promise perfection, but I promise effort,
-            loyalty, and a heart that chooses you — every single day
-        </p>
+        <p>I don't promise perfection, but I promise effort, loyalty, and a heart that chooses you — every single day</p>
     </div>
 
     <div class="footer">
         “In every universe, I will always choose you.” 💖<br>
-        — “Your slightly annoying man 💕
+        — Your slightly annoying man 💕
     </div>
 </div>
 
 <div id="popup"
-     style="display:none; position:fixed; inset:0;
-     background:rgba(0,0,0,0.6); z-index:10;
-     justify-content:center; align-items:center;">
+     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:10; justify-content:center; align-items:center;">
     <div style="background:#ff8fab; padding:30px; border-radius:25px; max-width:400px;">
         <h2>For you my Kuchipuchi 💕</h2>
-        <p>
-            No matter where life takes us,
-            my heart will always choose you.
-            Today, tomorrow, always. 🫶🫶
-        </p>
-        <div style="margin-top:15px; font-weight:bold; cursor:pointer;"
-             onclick="closePopup()">
-            Miss you 💗(close)
+        <p>No matter where life takes us, my heart will always choose you. Today, tomorrow, always. 🫶🫶</p>
+        <div style="margin-top:15px; font-weight:bold; cursor:pointer;" onclick="closePopup()">
+            Miss you 💗 (close)
         </div>
     </div>
 </div>
@@ -264,6 +224,8 @@ window.onload = typeText;
 <script>
 function openPopup() {
     document.getElementById("popup").style.display = "flex";
+    const music = document.getElementById("bgMusic");
+    if (music.paused) music.play().catch(e => console.log("User interaction required"));
 }
 function closePopup() {
     document.getElementById("popup").style.display = "none";
