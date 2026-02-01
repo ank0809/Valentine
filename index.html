@@ -6,25 +6,15 @@
 <title>For Sweetie ❤️</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* 🌈 Animated Romantic Background */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: #fff;
     text-align: center;
     overflow-x: hidden;
-
-    background: linear-gradient(
-        -45deg,
-        #ff4e8c,
-        #ff7aa2,
-        #ffb3c6,
-        #ff5f7e
-    );
+    background: linear-gradient(-45deg,#ff4e8c,#ff7aa2,#ffb3c6,#ff5f7e);
     background-size: 400% 400%;
     animation: gradientMove 12s ease infinite;
 }
@@ -35,20 +25,14 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* 🌑 Soft vignette */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: radial-gradient(
-        circle,
-        rgba(255,255,255,0.15),
-        rgba(0,0,0,0.6)
-    );
+    background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(0,0,0,0.6));
     z-index: 0;
 }
 
-/* ✨ Glowing Orbs */
 .orb {
     position: fixed;
     width: 120px;
@@ -61,15 +45,10 @@ body::before {
 }
 
 @keyframes floatOrb {
-    from {
-        transform: translateY(100vh) scale(0.7);
-    }
-    to {
-        transform: translateY(-120vh) scale(1.2);
-    }
+    from { transform: translateY(100vh) scale(0.7); }
+    to { transform: translateY(-120vh) scale(1.2); }
 }
 
-/* 💌 Main Card */
 .card {
     background: rgba(255,255,255,0.18);
     backdrop-filter: blur(14px);
@@ -82,21 +61,10 @@ body::before {
     z-index: 2;
 }
 
-h1 {
-    font-size: 2.6em;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
+h1 { font-size: 2.6em; }
+h2 { margin-top: 25px; }
+p { font-size: 1.15em; line-height: 1.6; }
 
-h2 {
-    margin-top: 25px;
-}
-
-p {
-    font-size: 1.15em;
-    line-height: 1.6;
-}
-
-/* 🧸 Dudu Bubu Couple Image */
 .teddy-img {
     width: 190px;
     border-radius: 22px;
@@ -104,14 +72,12 @@ p {
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* ⏳ Countdown */
 .countdown {
     font-size: 1.4em;
     margin: 20px 0;
     font-weight: bold;
 }
 
-/* 💝 Button */
 .surprise-btn {
     background: linear-gradient(135deg, #ff4e8c, #ff8fab);
     border: none;
@@ -122,21 +88,14 @@ p {
     color: #fff;
     margin-top: 20px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.35);
-    transition: transform 0.3s ease;
 }
 
-.surprise-btn:hover {
-    transform: scale(1.08);
-}
-
-/* 💖 Footer */
 .footer {
     margin-top: 30px;
     font-size: 1.3em;
     font-weight: bold;
 }
 
-/* 💗 Floating Hearts */
 .heart {
     position: fixed;
     bottom: -20px;
@@ -151,55 +110,38 @@ p {
     to { transform: translateY(-110vh); opacity: 0; }
 }
 
-/* 📱 Mobile Optimization */
 @media (max-width: 768px) {
-    .card {
-        margin: 20px 10px;
-        padding: 22px 18px;
-    }
+    .card { margin: 20px 10px; padding: 22px 18px; }
     h1 { font-size: 2em; }
-    h2 { font-size: 1.3em; }
-    p { font-size: 1.05em; }
     .teddy-img { width: 160px; }
-    .countdown { font-size: 1.2em; }
-}
-
-@media (max-width: 380px) {
-    h1 { font-size: 1.8em; }
-    .surprise-btn { width: 100%; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ✨ Glowing Orbs -->
 <script>
 for (let i = 0; i < 7; i++) {
     const orb = document.createElement("div");
     orb.className = "orb";
     orb.style.left = Math.random() * 100 + "vw";
     orb.style.animationDuration = (8 + Math.random() * 6) + "s";
-    orb.style.opacity = Math.random() * 0.5 + 0.3;
     document.body.appendChild(orb);
 }
 </script>
 
-<!-- 💗 Floating Hearts -->
 <script>
 function createHeart() {
     const heart = document.createElement("div");
     heart.className = "heart";
     heart.innerHTML = "💗";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 7000);
 }
 setInterval(createHeart, 400);
 </script>
 
-<!-- ⏳ Countdown -->
 <script>
 function updateCountdown() {
     const valentine = new Date("February 14, 2026 00:00:00").getTime();
@@ -225,9 +167,8 @@ setInterval(updateCountdown, 1000);
 <div class="card">
     <h1>Happy Valentine Week, Sweetie ❤️</h1>
 
-    <p>This page is a tiny piece of my heart, made just for you 💕</p>
+    <p>This little page carries big feelings… all for you 💕</p>
 
-    <!-- 💑 Dudu Bubu Live Couple Cartoon -->
     <img class="teddy-img"
          src="https://media.tenor.com/0AVbKGY_MxMAAAAi/dudu-bubu.gif"
          alt="Dudu Bubu Couple Love">
@@ -237,32 +178,47 @@ setInterval(updateCountdown, 1000);
     <button class="surprise-btn" onclick="openPopup()">💝 Click Me, Sweetie 💝</button>
 
     <h2>🌹 Rose Day</h2>
-    <p>You’re the rose my heart picked forever 🌹</p>
+    <p>
+        If I could, I’d give you a rose every day…  
+        not because they’re beautiful,  
+        but because they remind me of your soft heart 🌹
+    </p>
 
     <h2>🍫 Chocolate Day</h2>
-    <p>You’re sweeter than every chocolate combined 😋</p>
+    <p>
+        Life already tastes sweeter with you in it,  
+        but I still owe you chocolates…  
+        because seeing you smile is my favorite treat 🍫
+    </p>
 
     <h2>🧸 Teddy Day</h2>
-    <p>If love had a shape, it’d look like a Dudu–Bubu hug 🧸</p>
+    <p>
+        When you miss me, hug a teddy a little tighter,  
+        and imagine it’s me holding you,  
+        whispering “I’m right here” 🧸
+    </p>
 
     <h2>❤️ Valentine’s Day</h2>
-    <p>You’re not just my Valentine… you’re my favorite feeling.</p>
+    <p>
+        I don’t promise perfection,  
+        but I promise effort, loyalty, and a heart  
+        that chooses you — every single day ❤️
+    </p>
 
     <div class="footer">
-        I love you endlessly, Sweetie 💖  
-        <br>— Yours always  
+        I love you more than words can hold 💖  
+        <br>— Yours, always  
         <br><b>Your Farzi Engineer 😌</b>
     </div>
 </div>
 
-<!-- 💌 Popup -->
-<div class="popup" id="popup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:10; justify-content:center; align-items:center;">
+<div id="popup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:10; justify-content:center; align-items:center;">
     <div style="background:#ff8fab; padding:30px; border-radius:25px; max-width:400px;">
         <h2>Hey Sweetie 💕</h2>
         <p>
             No matter where life takes us,  
-            my heart will always find its way back to you.  
-            You’re my safe place, my smile, my everything.
+            my heart will always choose you.  
+            Today, tomorrow, always.
         </p>
         <div style="margin-top:15px; font-weight:bold; cursor:pointer;" onclick="closePopup()">Close 💗</div>
     </div>
