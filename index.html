@@ -1,138 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Sweetie ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sweetie ❤️</title>
 
-    <style>
-        * { box-sizing: border-box; }
+<style>
+* { box-sizing: border-box; }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            color: #fff;
-            text-align: center;
-            overflow-x: hidden;
-            background: linear-gradient(-45deg,#ff4e8c,#ff7aa2,#ffb3c6,#ff5f7e);
-            background-size: 400% 400%;
-            animation: gradientMove 12s ease infinite;
-        }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg,#ff4e8c,#ff7aa2,#ffb3c6,#ff5f7e);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(0,0,0,0.6));
-            z-index: 0;
-        }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(0,0,0,0.6));
+    z-index: 0;
+}
 
-        .card {
-            background: rgba(255,255,255,0.18);
-            backdrop-filter: blur(14px);
-            border-radius: 25px;
-            padding: 30px;
-            max-width: 780px;
-            margin: 40px auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-            position: relative;
-            z-index: 2;
-        }
+.card {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(14px);
+    border-radius: 25px;
+    padding: 30px;
+    max-width: 780px;
+    margin: 40px auto;
+    box-shadow: 0 0 40px rgba(255,255,255,0.25);
+    position: relative;
+    z-index: 2;
+    animation: softGlow 4s ease-in-out infinite alternate;
+}
 
-        h1 { font-size: 2.4em; }
-        h2 { margin-top: 25px; }
+@keyframes softGlow {
+    from { box-shadow: 0 0 30px rgba(255,255,255,0.25); }
+    to   { box-shadow: 0 0 55px rgba(255,150,180,0.45); }
+}
 
-        p {
-            font-size: 1.15em;
-            line-height: 1.6;
-        }
+h1 { font-size: 2.4em; }
+h2 { margin-top: 30px; }
 
-        #typingText {
-            min-height: 60px;
-            font-size: 1.2em;
-        }
+p {
+    font-size: 1.15em;
+    line-height: 1.6;
+}
 
-        .svg-love {
-            width: 220px;
-            margin: 20px auto;
-        }
+#typingText {
+    min-height: 60px;
+    font-size: 1.2em;
+}
 
-        .surprise-btn {
-            background: linear-gradient(135deg, #ff4e8c, #ff8fab);
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            border-radius: 30px;
-            cursor: pointer;
-            color: #fff;
-            margin-top: 20px;
-        }
+/* SVG */
+.svg-love {
+    width: 220px;
+    margin: 20px auto;
+}
 
-        .footer {
-            margin-top: 30px;
-            font-size: 1.25em;
-            font-weight: bold;
-        }
+/* Heartbeat animation */
+.heartbeat {
+    animation: heartbeat 1.6s infinite;
+    transform-origin: center;
+}
 
-        .heart {
-            position: fixed;
-            bottom: -20px;
-            font-size: 22px;
-            animation: floatHeart 6s linear infinite;
-            opacity: 0.75;
-            z-index: 1;
-        }
+@keyframes heartbeat {
+    0%   { transform: scale(1); }
+    25%  { transform: scale(1.08); }
+    50%  { transform: scale(1); }
+    75%  { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
 
-        @keyframes floatHeart {
-            from { transform: translateY(0); }
-            to { transform: translateY(-110vh); opacity: 0; }
-        }
+/* Button */
+.surprise-btn {
+    background: linear-gradient(135deg, #ff4e8c, #ff8fab);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 20px;
+}
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            .svg-love { width: 180px; }
-        }
-    </style>
+/* Fade-in sections */
+.section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.section.delay1 { animation-delay: 0.5s; }
+.section.delay2 { animation-delay: 1s; }
+.section.delay3 { animation-delay: 1.5s; }
+.section.delay4 { animation-delay: 2s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    margin-top: 35px;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 22px;
+    animation: floatHeart 6s linear infinite;
+    opacity: 0.75;
+    z-index: 1;
+}
+
+@keyframes floatHeart {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-110vh); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    .svg-love { width: 180px; }
+}
+</style>
 </head>
 
 <body>
 
-<!-- 🎵 Background Music -->
-<audio id="bgMusic" preload="auto" loop>
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_1bfa4f7c56.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-    /* Floating hearts */
-    function createHeart() {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "💗";
-        heart.style.left = Math.random() * 100 + "vw";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 7000);
+/* Floating hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+}
+setInterval(createHeart, 400);
+
+/* Typing animation */
+const message = "This little page carries big feelings… all for you 💕";
+let i = 0;
+
+function typeText() {
+    if (i < message.length) {
+        document.getElementById("typingText").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeText, 60);
     }
-    setInterval(createHeart, 400);
-
-    /* Typing animation */
-    const typingMessage = "This little page carries big feelings… all for you 💕";
-    let tIndex = 0;
-
-    function startTyping() {
-        if (tIndex < typingMessage.length) {
-            document.getElementById("typingText").innerHTML += typingMessage.charAt(tIndex);
-            tIndex++;
-            setTimeout(startTyping, 60);
-        }
-    }
-
-    window.onload = startTyping;
+}
+window.onload = typeText;
 </script>
 
 <div class="card">
@@ -144,14 +180,19 @@
         <svg viewBox="0 0 200 200">
             <circle cx="75" cy="80" r="35" fill="#fff"/>
             <circle cx="125" cy="80" r="35" fill="#fff"/>
+
             <circle cx="68" cy="78" r="4"/>
             <circle cx="82" cy="78" r="4"/>
             <circle cx="118" cy="78" r="4"/>
             <circle cx="132" cy="78" r="4"/>
+
             <circle cx="60" cy="88" r="5" fill="#ff9aa2"/>
             <circle cx="140" cy="88" r="5" fill="#ff9aa2"/>
+
             <ellipse cx="100" cy="135" rx="70" ry="45" fill="#fff"/>
-            <path d="M100 120 C90 105,60 110,60 140
+
+            <path class="heartbeat"
+                  d="M100 120 C90 105,60 110,60 140
                      C60 165,100 185,100 185
                      C100 185,140 165,140 140
                      C140 110,110 105,100 120Z"
@@ -163,30 +204,38 @@
         💝 Something for you — Click Me, Sweetie 💝
     </button>
 
-    <h2>🌹 Rose Day</h2>
-    <p>
-        If I could, I'd give you a rose every day — not because
-        they're beautiful, but because they remind me of your
-        soft heart ❤️
-    </p>
+    <div class="section delay1">
+        <h2>🌹 Rose Day</h2>
+        <p>
+            If I could, I'd give you a rose every day — not because
+            they're beautiful, but because they remind me of your
+            soft heart ❤️
+        </p>
+    </div>
 
-    <h2>🍫 Chocolate Day</h2>
-    <p>
-        Life with you feels like my favorite chocolate —
-        sweet, comforting, and always addictive 🫠🍫
-    </p>
+    <div class="section delay2">
+        <h2>🍫 Chocolate Day</h2>
+        <p>
+            Life with you feels like my favorite chocolate —
+            sweet, comforting, and always addictive 🫠🍫
+        </p>
+    </div>
 
-    <h2>🧸 Teddy Day</h2>
-    <p>
-        Whenever you feel low, remember there’s someone
-        who wants to hold you tight and never let go 🧸❤️
-    </p>
+    <div class="section delay3">
+        <h2>🧸 Teddy Day</h2>
+        <p>
+            Whenever you feel low, remember there’s someone
+            who wants to hold you tight and never let go 🧸❤️
+        </p>
+    </div>
 
-    <h2>❤️ Valentine’s Day</h2>
-    <p>
-        I don't promise perfection, but I promise effort,
-        loyalty, and a heart that chooses you — every single day
-    </p>
+    <div class="section delay4">
+        <h2>❤️ Valentine’s Day</h2>
+        <p>
+            I don't promise perfection, but I promise effort,
+            loyalty, and a heart that chooses you — every single day
+        </p>
+    </div>
 
     <div class="footer">
         I love you endlessly 💖<br>
@@ -213,18 +262,12 @@
 </div>
 
 <script>
-    function openPopup() {
-        const music = document.getElementById("bgMusic");
-        music.volume = 0.4;
-        music.currentTime = 0;
-        music.play();
-
-        document.getElementById("popup").style.display = "flex";
-    }
-
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
+function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
 </script>
 
 </body>
