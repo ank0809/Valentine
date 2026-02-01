@@ -45,18 +45,16 @@ body::before {
     z-index: 2;
 }
 
-h1 { font-size: 2.6em; }
+h1 { font-size: 2.4em; }
 h2 { margin-top: 25px; }
 p { font-size: 1.15em; line-height: 1.6; }
 
-.teddy-img {
-    width: 190px;
-    border-radius: 22px;
-    margin: 18px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+/* 💑 SVG Container */
+.svg-love {
+    width: 220px;
+    margin: 20px auto;
 }
 
-/* Button */
 .surprise-btn {
     background: linear-gradient(135deg, #ff4e8c, #ff8fab);
     border: none;
@@ -66,6 +64,12 @@ p { font-size: 1.15em; line-height: 1.6; }
     cursor: pointer;
     color: #fff;
     margin-top: 20px;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 1.25em;
+    font-weight: bold;
 }
 
 /* Hearts */
@@ -85,7 +89,7 @@ p { font-size: 1.15em; line-height: 1.6; }
 
 @media (max-width: 768px) {
     h1 { font-size: 2em; }
-    .teddy-img { width: 160px; }
+    .svg-love { width: 180px; }
 }
 </style>
 </head>
@@ -109,10 +113,35 @@ setInterval(createHeart, 400);
 
     <p>This little page carries big feelings… all for you 💕</p>
 
-    <!-- ✅ FIXED DUDU BUBU IMAGE -->
-    <img class="teddy-img"
-         src="https://i.imgur.com/7ZQZ5YB.png"
-         alt="Dudu Bubu Couple Love">
+    <!-- 💑 INLINE DUDU BUBU STYLE SVG (CANNOT FAIL) -->
+    <div class="svg-love">
+        <svg viewBox="0 0 200 200">
+            <!-- Heads -->
+            <circle cx="75" cy="80" r="35" fill="#fff"/>
+            <circle cx="125" cy="80" r="35" fill="#fff"/>
+
+            <!-- Eyes -->
+            <circle cx="68" cy="78" r="4" fill="#000"/>
+            <circle cx="82" cy="78" r="4" fill="#000"/>
+            <circle cx="118" cy="78" r="4" fill="#000"/>
+            <circle cx="132" cy="78" r="4" fill="#000"/>
+
+            <!-- Blush -->
+            <circle cx="60" cy="88" r="5" fill="#ff9aa2"/>
+            <circle cx="140" cy="88" r="5" fill="#ff9aa2"/>
+
+            <!-- Bodies -->
+            <ellipse cx="100" cy="135" rx="70" ry="45" fill="#fff"/>
+
+            <!-- Heart -->
+            <path d="M100 120 
+                     C90 105, 60 110, 60 140
+                     C60 165, 100 185, 100 185
+                     C100 185, 140 165, 140 140
+                     C140 110, 110 105, 100 120Z"
+                  fill="#ff4e8c"/>
+        </svg>
+    </div>
 
     <button class="surprise-btn" onclick="openPopup()">💝 Click Me, Sweetie 💝</button>
 
@@ -120,7 +149,7 @@ setInterval(createHeart, 400);
     <p>
         If I could give you one thing every day,  
         it would be the feeling of being loved,  
-        safe, and chosen — just like a rose 🌹
+        safe, and chosen 🌹
     </p>
 
     <h2>🍫 Chocolate Day</h2>
@@ -132,9 +161,9 @@ setInterval(createHeart, 400);
 
     <h2>🧸 Teddy Day</h2>
     <p>
-        Whenever you feel low or tired,  
+        Whenever you feel low,  
         imagine me pulling you closer  
-        and saying “I’ve got you” 🧸
+        and holding you tight 🧸
     </p>
 
     <h2>❤️ Valentine’s Day</h2>
@@ -144,7 +173,7 @@ setInterval(createHeart, 400);
         with you, always ❤️
     </p>
 
-    <div style="margin-top:30px;font-weight:bold;">
+    <div class="footer">
         I love you endlessly 💖  
         <br>— Your Farzi Engineer 😌
     </div>
@@ -155,7 +184,7 @@ setInterval(createHeart, 400);
         <h2>Hey Sweetie 💕</h2>
         <p>
             No matter what happens,  
-            my heart will always pick you.
+            my heart will always choose you.
         </p>
         <div style="margin-top:15px; font-weight:bold; cursor:pointer;" onclick="closePopup()">Close 💗</div>
     </div>
